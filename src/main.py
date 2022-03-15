@@ -76,10 +76,9 @@ def import_strawberry(api: sly.Api, task_id, context, state, app_logger):
 
     new_dataset = api.dataset.create(new_project.id, g.dataset_name, change_name_if_conflict=True)
 
-    progress = sly.Progress('Upload items', len(items_path), app_logger)
-
     sample_img_names = random.sample(images_names, g.sample_percent)
 
+    progress = sly.Progress('Upload items', len(sample_img_names), app_logger)
     for img_batch in sly.batched(sample_img_names, batch_size=g.batch_size):
         img_pathes = [os.path.join(items_path, img_name) for img_name in img_batch]
         img_infos = api.image.upload_paths(new_dataset.id, img_batch, img_pathes)
