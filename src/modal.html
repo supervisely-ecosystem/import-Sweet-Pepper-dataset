@@ -1,0 +1,17 @@
+<div>
+      <sly-card
+            class="mt15"
+            title="Choose datasets and sample percents:"
+    >
+
+                <div >{{ Math.round(6.23 * state.samplePercent) }} images will be import</div>
+
+                <div>
+                  <sly-field title="Set sample (%)" style="margin: 15px 10px 0 0">
+                  <el-slider v-model="state.samplePercent" :min="1" :max="100" show-input></el-slider>
+                    </sly-field>
+                </div>
+
+      </sly-card>
+
+</div>
