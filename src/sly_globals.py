@@ -34,7 +34,7 @@ arch_name = 'archive.zip'
 extract_folder_name = 'dataset_620_red_yellow_cart_only'
 annotation_file_name = '620_images_via_project.json'
 images_ext = '.png'
-sample_percent = int(os.environ["modal.state.samplePercent"]) * 6.23
+sample_percent = round(int(os.environ["modal.state.samplePercent"]) * 6.23)
 class_name = 'pepper'
 
 batch_size = 30
