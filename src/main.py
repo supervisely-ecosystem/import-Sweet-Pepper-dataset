@@ -63,8 +63,8 @@ def extract_zip():
 @sly.timeit
 def import_strawberry(api: sly.Api, task_id, context, state, app_logger):
 
-    # gdown.download(g.strawberry_url, g.archive_path, quiet=False)
-    # extract_zip()
+    gdown.download(g.strawberry_url, g.archive_path, quiet=False)
+    extract_zip()
 
     items_path = os.path.join(g.work_dir_path, g.extract_folder_name)
     images_names = [image_name for image_name in os.listdir(items_path) if get_file_ext(image_name) == g.images_ext]
